@@ -168,7 +168,7 @@ input[type="date"]{ color:white; } input[type="date"]::-webkit-calendar-picker-i
         <h1>STACK<span>LY</span></h1>
     </div>
 
-    <form>
+    <form id="signupForm">
 
         <!-- Full Name -->
         <div class="input-box">
@@ -321,6 +321,27 @@ toggleConfirmPassword.addEventListener("click", function(){
         confirmPassword.type = "password";
         this.classList.replace("fa-eye-slash","fa-eye");
     }
+
+});
+
+// Form submit
+const signupForm = document.getElementById("signupForm");
+
+signupForm.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    // Check password match
+    if(password.value !== confirmPassword.value){
+        alert("Password and Confirm Password do not match!");
+        return;
+    }
+
+    // // Success message
+    // alert("Account created successfully!");
+
+    // Redirect to login page
+    window.location.href = "login.html";
 
 });
 

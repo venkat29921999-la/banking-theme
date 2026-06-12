@@ -73,7 +73,8 @@ onclick="showSection('settings',this)">
 Settings
 </li>
 
-<li onclick="window.location.href='login.html'">
+<li class="menu-item"
+onclick="window.location.href='login.html'">
 <i class="fa-solid fa-right-from-bracket"></i>
 Logout
 </li>
@@ -355,20 +356,29 @@ document.querySelector(".overlay")
 
 function showSection(sectionId, element){
 
-document.querySelectorAll(".content-section")
-.forEach(section=>{
-section.style.display="none";
-});
+    // Hide all sections
+    document.querySelectorAll(".content-section")
+    .forEach(section => {
+        section.style.display = "none";
+    });
 
-document.getElementById(sectionId)
-.style.display="block";
+    // Show selected section
+    document.getElementById(sectionId).style.display = "block";
 
-document.querySelectorAll(".menu-item")
-.forEach(item=>{
-item.classList.remove("active");
-});
+    // Remove active class
+    document.querySelectorAll(".menu-item")
+    .forEach(item => {
+        item.classList.remove("active");
+    });
 
-element.classList.add("active");
+    // Add active class
+    element.classList.add("active");
+
+    // Close sidebar on mobile
+    if(window.innerWidth <= 768){
+        document.querySelector(".sidebar").classList.remove("show");
+        document.querySelector(".overlay").classList.remove("active");
+    }
 
 }
 

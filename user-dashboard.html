@@ -75,7 +75,8 @@ onclick="showSection('profile',this)">
 Profile
 </li>
 
-<li onclick="window.location.href='login.html'">
+<li class="menu-item"
+onclick="window.location.href='login.html'">
 <i class="fa-solid fa-right-from-bracket"></i>
 Logout
 </li>
@@ -206,7 +207,6 @@ Logout
 <!-- ACCOUNTS -->
 <div id="accounts" class="content-section" style="display:none;">
 
-<h2>Account Information</h2>
 
 <div class="shipment-table">
 
@@ -246,7 +246,6 @@ Logout
 <!-- TRANSACTIONS -->
 <div id="transactions" class="content-section" style="display:none;">
 
-<h2>Transfer Money</h2>
 
 <div class="shipment-table">
 
@@ -367,19 +366,28 @@ document.querySelector(".overlay").classList.toggle("active");
 
 function showSection(sectionId, element){
 
-document.querySelectorAll(".content-section")
-.forEach(section=>{
-section.style.display="none";
-});
+    // Hide all sections
+    document.querySelectorAll(".content-section")
+    .forEach(section => {
+        section.style.display = "none";
+    });
 
-document.getElementById(sectionId).style.display="block";
+    // Show selected section
+    document.getElementById(sectionId).style.display = "block";
 
-document.querySelectorAll(".menu-item")
-.forEach(item=>{
-item.classList.remove("active");
-});
+    // Active menu color
+    document.querySelectorAll(".menu-item")
+    .forEach(item => {
+        item.classList.remove("active");
+    });
 
-element.classList.add("active");
+    element.classList.add("active");
+
+    // Close sidebar on mobile
+    if(window.innerWidth <= 768){
+        document.querySelector(".sidebar").classList.remove("show");
+        document.querySelector(".overlay").classList.remove("active");
+    }
 
 }
 
