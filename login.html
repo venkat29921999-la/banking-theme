@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login | TrustBank</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+
+    background:
+    linear-gradient(rgba(11,31,58,.80),
+    rgba(11,31,58,.80)),
+    url("Assest/bank1.webp");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.login-box{
+    width:500px;
+
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(15px);
+
+    padding:50px;
+    border-radius:30px;
+
+    border:1px solid rgba(255,255,255,.2);
+
+    box-shadow:0 10px 40px rgba(0,0,0,.25);
+}
+
+.logo{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.logo h1{
+    font-size:55px;
+    color:white;
+    font-weight:700;
+}
+
+.logo span{
+    color:rgba(209,177,177,0.92);
+}
+
+/* Tabs */
+
+.login-tabs{
+    display:flex;
+    background:rgba(255,255,255,.15);
+    border-radius:50px;
+    overflow:hidden;
+    margin-bottom:35px;
+}
+
+.login-tabs button{
+    flex:1;
+    border:none;
+    padding:18px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+.active-tab{
+    background:rgba(209,177,177,0.92);
+    color:#000;
+    font-weight:600;
+}
+
+.inactive-tab{
+    background:transparent;
+    color:white;
+}
+
+/* Inputs */
+
+.input-box{
+    position:relative;
+    margin-bottom:25px;
+}
+
+.input-box input{
+    width:100%;
+    padding:18px;
+    border:none;
+    outline:none;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,.12);
+
+    color:white;
+}
+
+.input-box input::placeholder{
+    color:#ddd;
+}
+
+.input-box i{
+    position:absolute;
+    right:20px;
+    top:20px;
+    color:white;
+}
+
+/* Remember */
+
+.options{
+    display:flex;
+    justify-content:space-between;
+    color:white;
+    margin-bottom:30px;
+}
+
+.options a{
+    color:rgba(209,177,177,0.92);
+    text-decoration:none;
+}
+
+/* Button */
+
+.login-btn{
+    width:100%;
+    border:none;
+    padding:18px;
+
+    background:rgba(209,177,177,0.92);
+    color:black;
+
+    border-radius:15px;
+    font-size:20px;
+    font-weight:600;
+
+    cursor:pointer;
+}
+
+.bottom-links{
+    margin-top:30px;
+
+    display:flex;
+    justify-content:space-between;
+}
+
+.bottom-links a{
+    color:white;
+    text-decoration:none;
+}
+
+/* Social */
+
+.social-title{
+    text-align:center;
+    color:white;
+    margin-top:35px;
+    margin-bottom:25px;
+}
+
+.social-icons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+.social-icons a{
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+    background:rgba(255,255,255,.15);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+    font-size:22px;
+
+    transition:.3s;
+}
+
+.social-icons a:hover{
+    background:rgba(209,177,177,0.92);
+    color:black;
+}
+
+</style>
+</head>
+<body>
+
+<div class="login-box">
+
+    <div class="logo">
+        <h1>STACK<span>LY</span></h1>
+    </div>
+
+    <!-- Tabs -->
+   <!-- Tabs -->
+<div class="login-tabs">
+
+    <button type="button" id="userBtn" class="active-tab">
+        User
+    </button>
+
+    <button type="button" id="adminBtn" class="inactive-tab">
+        Admin
+    </button>
+
+</div>
+
+ <form>
+
+    <!-- Account Number -->
+    <div class="input-box">
+        <input
+            type="text"
+             id="accountNumber"
+            placeholder="Account Number"
+            pattern="[0-9]{11}"
+            maxlength="11"
+            required>
+        <i class="fa-solid fa-building-columns"></i>
+    </div>
+
+    <!-- Email -->
+    <div class="input-box">
+        <input
+            type="email"
+            placeholder="Email Address"
+            required>
+        <i class="fa-solid fa-envelope"></i>
+    </div>
+
+    <!-- Password -->
+    <div class="input-box">
+
+    <input
+        type="password"
+        id="password"
+        placeholder="Password"
+        minlength="8"
+        required>
+
+    <i class="fa-solid fa-eye" id="togglePassword"></i>
+
+</div>
+
+    <!-- Options -->
+    <div class="options">
+
+        <label>
+            <input type="checkbox">
+            Remember Me
+        </label>
+
+        <a href="#">Forgot Password?</a>
+
+    </div>
+
+    <!-- Login Button -->
+    <button type="submit" class="login-btn" id="loginText">
+        User Login
+    </button>
+
+</form>
+
+    <!-- Bottom -->
+    <div class="bottom-links">
+
+        <a href="signin.html">
+            Create New Account
+        </a>
+
+        <a href="index.html">
+            ← Back To Home
+        </a>
+
+    </div>
+
+    <div class="social-title">
+        Or Continue With
+    </div>
+
+    <div class="social-icons">
+
+        <a href="404.html?type=logg">
+            <i class="fa-brands fa-google"></i>
+        </a>
+
+        <a href="404.html?type=logf">
+            <i class="fa-brands fa-facebook-f"></i>
+        </a>
+
+        <a href="404.html?type=logi">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+
+    </div>
+
+</div>
+<script>
+
+const userBtn = document.getElementById("userBtn");
+const adminBtn = document.getElementById("adminBtn");
+const loginText = document.getElementById("loginText");
+
+let loginType = "user";
+
+// User tab
+userBtn.addEventListener("click", function(){
+
+    userBtn.classList.add("active-tab");
+    userBtn.classList.remove("inactive-tab");
+
+    adminBtn.classList.remove("active-tab");
+    adminBtn.classList.add("inactive-tab");
+
+    loginText.innerHTML = "User Login";
+
+    loginType = "user";
+});
+
+// Admin tab
+adminBtn.addEventListener("click", function(){
+
+    adminBtn.classList.add("active-tab");
+    adminBtn.classList.remove("inactive-tab");
+
+    userBtn.classList.remove("active-tab");
+    userBtn.classList.add("inactive-tab");
+
+    loginText.innerHTML = "Admin Login";
+
+    loginType = "admin";
+});
+
+
+// Login button click
+document.querySelector("form").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const accNo = document.getElementById("accountNumber").value;
+
+    // Save account number
+    localStorage.setItem("accountNumber", accNo);
+
+    if(loginType === "user"){
+        window.location.href = "user-dashboard.html";
+    }
+    else{
+        window.location.href = "admin-dashboard.html";
+    }
+
+});
+
+</script>
+<script>
+
+const password = document.getElementById("password");
+const togglePassword = document.getElementById("togglePassword");
+
+togglePassword.addEventListener("click", function () {
+
+    if(password.type === "password"){
+
+        password.type = "text";
+        togglePassword.classList.remove("fa-eye");
+        togglePassword.classList.add("fa-eye-slash");
+
+    }
+    else{
+
+        password.type = "password";
+        togglePassword.classList.remove("fa-eye-slash");
+        togglePassword.classList.add("fa-eye");
+
+    }
+
+});
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sign Up | TrustBank</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+
+    background:
+    linear-gradient(rgba(11,31,58,.80),
+    rgba(11,31,58,.80)),
+    url("Assest/bank1.webp");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.signup-box{
+    width:550px;
+
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(15px);
+
+    padding:50px;
+    border-radius:30px;
+
+    border:1px solid rgba(255,255,255,.2);
+
+    box-shadow:0 10px 40px rgba(0,0,0,.25);
+}
+
+.logo{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.logo h1{
+    font-size:55px;
+    color:white;
+}
+
+.logo span{
+    color:rgba(209,177,177,0.92);
+}
+
+.input-box{
+    position:relative;
+    margin-bottom:22px;
+}
+
+.input-box input{
+    width:100%;
+    padding:18px;
+    border:none;
+    outline:none;
+    border-radius:15px;
+
+    background:rgba(255,255,255,.12);
+    color:white;
+}
+
+.input-box input::placeholder{
+    color:#ddd;
+}
+
+.input-box i{
+    position:absolute;
+    right:20px;
+    top:20px;
+    color:white;
+    cursor:pointer;
+}
+
+.signup-btn{
+    width:100%;
+    border:none;
+    padding:18px;
+
+    background:rgba(209,177,177,0.92);
+    color:black;
+
+    border-radius:15px;
+    font-size:20px;
+    font-weight:600;
+
+    cursor:pointer;
+}
+
+.signup-btn:hover{
+    opacity:.9;
+}
+
+.bottom-links{
+    margin-top:30px;
+
+    display:flex;
+    justify-content:space-between;
+}
+
+.bottom-links a{
+    color:white;
+    text-decoration:none;
+}
+
+.social-title{
+    text-align:center;
+    color:white;
+    margin-top:30px;
+    margin-bottom:20px;
+}
+
+input[type="date"]{ color:white; } input[type="date"]::-webkit-calendar-picker-indicator{ filter: invert(1); cursor: pointer; }
+
+.social-icons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+.social-icons a{
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+    background:rgba(255,255,255,.15);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+    font-size:22px;
+
+    transition:.3s;
+}
+
+.social-icons a:hover{
+    background:rgba(209,177,177,0.92);
+    color:black;
+}
+
+</style>
+</head>
+<body>
+
+<div class="signup-box">
+
+    <div class="logo">
+        <h1>STACK<span>LY</span></h1>
+    </div>
+
+    <form>
+
+        <!-- Full Name -->
+        <div class="input-box">
+            <input type="text"
+            placeholder="Full Name"
+            required>
+
+            <i class="fa-solid fa-user"></i>
+        </div>
+
+        <!-- Account Number -->
+        <div class="input-box">
+            <input type="text"
+            placeholder="Account Number"
+            maxlength="11"
+            pattern="[0-9]{11}"
+            required>
+
+            <i class="fa-solid fa-building-columns"></i>
+        </div>
+
+        <!-- Email -->
+        <div class="input-box">
+            <input type="email"
+            placeholder="Email Address"
+            required>
+
+            <i class="fa-solid fa-envelope"></i>
+        </div>
+
+        <!-- Mobile -->
+        <div class="input-box">
+            <input type="text"
+            placeholder="Mobile Number"
+            maxlength="10"
+            pattern="[0-9]{10}"
+            required>
+
+            <i class="fa-solid fa-phone"></i>
+        </div>
+
+<!-- Date of Birth -->
+<div class="input-box">
+    <input type="date" required>
+</div>
+
+<!-- Password -->
+<div class="input-box">
+
+    <input
+    type="password"
+    id="password"
+    placeholder="Password"
+    minlength="8"
+    required>
+
+    <i class="fa-solid fa-eye"
+    id="togglePassword"></i>
+
+</div>
+
+<!-- Confirm Password -->
+<div class="input-box">
+
+    <input
+    type="password"
+    id="confirmPassword"
+    placeholder="Confirm Password"
+    minlength="8"
+    required>
+
+    <i class="fa-solid fa-eye"
+    id="toggleConfirmPassword"></i>
+
+</div>
+
+
+
+        <button type="submit" class="signup-btn">
+            Create Account
+        </button>
+
+    </form>
+
+    <div class="bottom-links">
+
+        <a href="login.html">
+            Already Have An Account?
+        </a>
+
+        <a href="index.html">
+            ← Back To Home
+        </a>
+
+    </div>
+
+    <div class="social-title">
+        Or Continue With
+    </div>
+
+    <div class="social-icons">
+
+        <a href="404.html?type=signg">
+            <i class="fa-brands fa-google"></i>
+        </a>
+
+        <a href="404.html?type=signf">
+            <i class="fa-brands fa-facebook-f"></i>
+        </a>
+
+        <a href="404.html?type=signi">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+
+    </div>
+
+</div>
+
+<script>
+
+// Password
+const password = document.getElementById("password");
+const togglePassword = document.getElementById("togglePassword");
+
+togglePassword.addEventListener("click", function(){
+
+    if(password.type === "password"){
+        password.type = "text";
+        this.classList.replace("fa-eye","fa-eye-slash");
+    }
+    else{
+        password.type = "password";
+        this.classList.replace("fa-eye-slash","fa-eye");
+    }
+
+});
+
+
+// Confirm Password
+const confirmPassword = document.getElementById("confirmPassword");
+const toggleConfirmPassword = document.getElementById("toggleConfirmPassword");
+
+toggleConfirmPassword.addEventListener("click", function(){
+
+    if(confirmPassword.type === "password"){
+        confirmPassword.type = "text";
+        this.classList.replace("fa-eye","fa-eye-slash");
+    }
+    else{
+        confirmPassword.type = "password";
+        this.classList.replace("fa-eye-slash","fa-eye");
+    }
+
+});
+
+</script>
+
+
+
+
+
+</body>
+</html>

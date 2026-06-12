@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TrustBank User Dashboard</title>
+
+<link rel="stylesheet" href="user.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+<body>
+
+<div class="overlay" onclick="toggleSidebar()"></div>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+
+<div class="close-btn" onclick="toggleSidebar()">✕</div>
+
+<div class="logo-section">
+
+<img src="Assest/stacklylogo (1).webp" width="180">
+
+<p class="portal-text">USER PORTAL</p>
+
+</div>
+
+<h4 class="menu-title">BANKING</h4>
+
+<ul>
+
+<li class="menu-item active"
+onclick="showSection('dashboard',this)">
+<i class="fa-solid fa-house"></i>
+Dashboard
+</li>
+
+<li class="menu-item"
+onclick="showSection('accounts',this)">
+<i class="fa-solid fa-building-columns"></i>
+Accounts
+</li>
+
+<li class="menu-item"
+onclick="showSection('transactions',this)">
+<i class="fa-solid fa-money-bill-transfer"></i>
+Transactions
+</li>
+
+<li class="menu-item"
+onclick="showSection('cards',this)">
+<i class="fa-solid fa-credit-card"></i>
+Credit Cards
+</li>
+
+<li class="menu-item"
+onclick="showSection('loans',this)">
+<i class="fa-solid fa-hand-holding-dollar"></i>
+Loans
+</li>
+
+</ul>
+
+<h4 class="menu-title">ACCOUNT</h4>
+
+<ul>
+
+<li class="menu-item"
+onclick="showSection('profile',this)">
+<i class="fa-solid fa-user"></i>
+Profile
+</li>
+
+<li onclick="window.location.href='login.html'">
+<i class="fa-solid fa-right-from-bracket"></i>
+Logout
+</li>
+
+</ul>
+
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main-content">
+
+<div class="topbar">
+
+<button class="menu-btn" onclick="toggleSidebar()">
+☰
+</button>
+
+<h1>Welcome Back 👋</h1>
+
+<div class="top-right">
+
+<div id="userEmailDisplay"></div>
+
+<div class="top-icons">
+
+<div class="icon-box"><a href="404.html?type=user">
+<i class="fas fa-bell"></i>
+<span class="tooltip">Notifications</span></a>
+</div>
+
+<div class="icon-box"><a href="404.html?type=user">
+<i class="fas fa-comment-alt"></i>
+<span class="tooltip">Messages</span></a>
+</div>
+
+<div class="icon-box"><a href="404.html?type=user">
+<i class="fas fa-question-circle"></i>
+<span class="tooltip">Help</span></a>
+</div>
+
+<a href="login.html" class="icon-box">
+<i class="fas fa-sign-out-alt"></i>
+<span class="tooltip">Logout</span>
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="content-section">
+
+<div class="cards">
+
+<div class="card">
+<i class="fa-solid fa-wallet"></i>
+<h3>Account Balance</h3>
+<h2>₹2,40,000</h2>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-credit-card"></i>
+<h3>Credit Limit</h3>
+<h2>₹1,50,000</h2>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-piggy-bank"></i>
+<h3>Fixed Deposits</h3>
+<h2>4</h2>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-money-check-dollar"></i>
+<h3>Loans Active</h3>
+<h2>2</h2>
+</div>
+
+</div>
+
+<div class="shipment-table">
+
+<h2>Recent Transactions</h2>
+
+<table>
+
+<tr>
+<th>Date</th>
+<th>Description</th>
+<th>Amount</th>
+</tr>
+
+<tr>
+<td>10 June 2026</td>
+<td>Salary Credit</td>
+<td style="color:green;">+ ₹45,000</td>
+</tr>
+
+<tr>
+<td>09 June 2026</td>
+<td>Electricity Bill</td>
+<td style="color:red;">- ₹2,300</td>
+</tr>
+
+<tr>
+<td>08 June 2026</td>
+<td>Online Shopping</td>
+<td style="color:red;">- ₹1,250</td>
+</tr>
+
+</table>
+
+<div class="view-more">
+
+<a href="404.html?type=user">
+    View More Transactions
+    <i class="fa-solid fa-arrow-right"></i>
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ACCOUNTS -->
+<div id="accounts" class="content-section" style="display:none;">
+
+<h2>Account Information</h2>
+
+<div class="shipment-table">
+
+<table>
+
+<tr>
+<th>Field</th>
+<th>Details</th>
+</tr>
+
+<tr>
+<td>Account Number</td>
+<td id="accNo"></td>
+</tr>
+
+<tr>
+<td>Account Type</td>
+<td>Savings Account</td>
+</tr>
+
+<tr>
+<td>Branch</td>
+<td>Chennai Main Branch</td>
+</tr>
+
+<tr>
+<td>IFSC Code</td>
+<td>TRBK0001458</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<!-- TRANSACTIONS -->
+<div id="transactions" class="content-section" style="display:none;">
+
+<h2>Transfer Money</h2>
+
+<div class="shipment-table">
+
+<input type="text" placeholder="Beneficiary Name"><br><br>
+
+<input type="text" placeholder="IFSC Code"><br><br>
+
+<input type="text" placeholder="Beneficiary Account Number"><br><br>
+
+<input type="number" placeholder="Amount"><br><br>
+
+<a href="404.html?type=user"><button>Transfer Now</button></a>
+
+</div>
+
+</div>
+
+<!-- CREDIT CARDS -->
+<div id="cards" class="content-section" style="display:none;">
+
+<div class="cards">
+
+<div class="card">
+<i class="fa-solid fa-credit-card"></i>
+<h3>Visa Platinum</h3>
+<h2>₹1.5L</h2>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-calendar-days"></i>
+<h3>Expiry</h3>
+<h2>09/30</h2>
+</div>
+
+</div>
+
+</div>
+
+<!-- LOANS -->
+<div id="loans" class="content-section" style="display:none;">
+
+<div class="cards">
+
+<div class="card">
+<i class="fa-solid fa-house"></i>
+<h3>Home Loan</h3>
+<h2>₹25L</h2>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-car"></i>
+<h3>Vehicle Loan</h3>
+<h2>₹8L</h2>
+</div>
+
+</div>
+
+</div>
+
+<!-- PROFILE -->
+<div id="profile" class="content-section" style="display:none;">
+
+<div class="cards">
+
+    <div class="card">
+        <i class="fa-solid fa-user"></i>
+        <h3>Name</h3>
+        <h2>Selva Kumar</h2>
+    </div>
+
+    <div class="card">
+        <i class="fa-solid fa-envelope"></i>
+        <h3>Email</h3>
+        <h2 id="profileEmail"></h2>
+    </div>
+
+    <div class="card">
+        <i class="fa-solid fa-building-columns"></i>
+        <h3>Account Number</h3>
+        <h2 id="profileAccNo"></h2>
+    </div>
+
+    <div class="card">
+        <i class="fa-solid fa-code"></i>
+        <h3>IFSC Code</h3>
+        <h2>TRBK0001458</h2>
+    </div>
+
+    <div class="card">
+        <i class="fa-solid fa-calendar-days"></i>
+        <h3>Date of Birth</h3>
+        <h2>10-06-2004</h2>
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+document.getElementById("userEmailDisplay").innerText =
+localStorage.getItem("loggedInEmail");
+
+document.getElementById("profileEmail").innerText =
+localStorage.getItem("loggedInEmail");
+
+document.getElementById("accNo").innerText =
+localStorage.getItem("accountNumber");
+
+function toggleSidebar(){
+
+document.querySelector(".sidebar").classList.toggle("show");
+document.querySelector(".overlay").classList.toggle("active");
+
+}
+
+function showSection(sectionId, element){
+
+document.querySelectorAll(".content-section")
+.forEach(section=>{
+section.style.display="none";
+});
+
+document.getElementById(sectionId).style.display="block";
+
+document.querySelectorAll(".menu-item")
+.forEach(item=>{
+item.classList.remove("active");
+});
+
+element.classList.add("active");
+
+}
+
+document.getElementById("profileAccNo").innerText =
+localStorage.getItem("accountNumber");
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard | TrustBank</title>
+
+<link rel="stylesheet" href="admin.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+<body>
+
+<div class="overlay" onclick="toggleSidebar()"></div>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+
+<div class="close-btn" onclick="toggleSidebar()">✕</div>
+
+<div class="logo-section">
+
+<img src="Assest/stacklylogo (1).webp" width="180">
+<p>ADMIN PANEL</p>
+</div>
+
+<h4 class="menu-title">MAIN</h4>
+
+<ul>
+
+<li class="menu-item active"
+onclick="showSection('dashboard',this)">
+<i class="fa-solid fa-chart-line"></i>
+Dashboard
+</li>
+
+<li class="menu-item"
+onclick="showSection('customers',this)">
+<i class="fa-solid fa-users"></i>
+Customers
+</li>
+
+<li class="menu-item"
+onclick="showSection('accounts',this)">
+<i class="fa-solid fa-building-columns"></i>
+Accounts
+</li>
+
+<li class="menu-item"
+onclick="showSection('loans',this)">
+<i class="fa-solid fa-money-bill-wave"></i>
+Loans
+</li>
+
+</ul>
+
+<h4 class="menu-title">SYSTEM</h4>
+
+<ul>
+
+<li class="menu-item"
+onclick="showSection('reports',this)">
+<i class="fa-solid fa-chart-pie"></i>
+Reports
+</li>
+
+<li class="menu-item"
+onclick="showSection('settings',this)">
+<i class="fa-solid fa-gear"></i>
+Settings
+</li>
+
+<li onclick="window.location.href='login.html'">
+<i class="fa-solid fa-right-from-bracket"></i>
+Logout
+</li>
+
+</ul>
+
+</div>
+
+
+<!-- MAIN -->
+<div class="main-content">
+
+<div class="topbar">
+
+<button class="menu-btn"
+onclick="toggleSidebar()">
+☰
+</button>
+
+<h1>Welcome Back 👋</h1>
+
+
+<div class="top-right">
+
+    <span id="adminEmailDisplay"></span>
+
+    <div class="top-icons">
+
+        <div class="icon-box"><a href="404.html?type=admin">
+            <i class="fas fa-bell"></i>
+            <span class="tooltip">Notifications</span></a>
+        </div>
+
+        <div class="icon-box"><a href="404.html?type=admin">
+            <i class="fas fa-comment-alt"></i>
+            <span class="tooltip">Messages</span></a>
+        </div>
+
+        <div class="icon-box"><a href="404.html?type=admin">
+            <i class="fas fa-question-circle"></i>
+            <span class="tooltip">Help</span></a>
+        </div>
+
+        <a href="login.html" class="icon-box">
+            <i class="fas fa-sign-out-alt"></i>
+            <span class="tooltip">Logout</span>
+        </a>
+
+    </div>
+
+</div>
+</div>
+
+
+<!-- DASHBOARD -->
+
+<div id="dashboard" class="content-section">
+
+<div class="cards">
+
+<div class="card">
+<i class="fa-solid fa-users"></i>
+<h3>Total Customers</h3>
+<h2>2,540</h2>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-building-columns"></i>
+<h3>Total Accounts</h3>
+<h2>3,120</h2>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-money-bill-wave"></i>
+<h3>Loans Issued</h3>
+<h2>650</h2>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-wallet"></i>
+<h3>Total Deposits</h3>
+<h2>₹85 Cr</h2>
+</div>
+
+</div>
+
+<div class="table-section">
+
+<h2>Recent Customers</h2>
+
+<table>
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Account Type</th>
+<th>Status</th>
+</tr>
+
+<tr>
+<td>1001</td>
+<td>Selva Kumar</td>
+<td>Savings</td>
+<td>Active</td>
+</tr>
+
+<tr>
+<td>1002</td>
+<td>Arun Kumar</td>
+<td>Current</td>
+<td>Active</td>
+</tr>
+
+</table>
+
+<div class="view-more">
+
+    <a href="404.html?type=admin">
+        View More Customers
+        <i class="fa-solid fa-arrow-right"></i>
+    </a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- CUSTOMERS -->
+
+<div id="customers" class="content-section" style="display:none;">
+
+
+
+<div class="table-section">
+
+<table>
+
+<tr>
+<th>Customer ID</th>
+<th>Name</th>
+<th>Phone</th>
+<th>Status</th>
+</tr>
+
+<tr>
+<td>CUS001</td>
+<td>Selva Kumar</td>
+<td>6379294974</td>
+<td>Active</td>
+</tr>
+
+<tr>
+<td>CUS002</td>
+<td>Ravi</td>
+<td>9876543210</td>
+<td>Active</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+
+<!-- ACCOUNTS -->
+
+<div id="accounts" class="content-section" style="display:none;">
+
+
+<div class="cards">
+
+<div class="card">
+<h3>Savings Accounts</h3>
+<h2>1,800</h2>
+</div>
+
+<div class="card">
+<h3>Current Accounts</h3>
+<h2>1,320</h2>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- LOANS -->
+
+<div id="loans" class="content-section" style="display:none;">
+
+
+<div class="cards">
+
+<div class="card">
+<h3>Personal Loans</h3>
+<h2>250</h2>
+</div>
+
+<div class="card">
+<h3>Home Loans</h3>
+<h2>180</h2>
+</div>
+
+<div class="card">
+<h3>Vehicle Loans</h3>
+<h2>220</h2>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- REPORTS -->
+
+<div id="reports" class="content-section" style="display:none;">
+
+
+<div class="cards">
+
+<div class="card">
+<h3>Monthly Revenue</h3>
+<h2>₹2.5 Cr</h2>
+</div>
+
+<div class="card">
+<h3>Transactions</h3>
+<h2>8,500</h2>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- SETTINGS -->
+
+<div id="settings" class="content-section" style="display:none;">
+
+
+
+<div class="cards">
+
+<div class="card">
+<h3>Security</h3>
+<h2>Enabled</h2>
+</div>
+
+<div class="card">
+<h3>Notifications</h3>
+<h2>Enabled</h2>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+
+document.getElementById("adminEmailDisplay").innerText =
+localStorage.getItem("loggedInEmail");
+
+function toggleSidebar(){
+
+document.querySelector(".sidebar")
+.classList.toggle("show");
+
+document.querySelector(".overlay")
+.classList.toggle("active");
+
+}
+
+function showSection(sectionId, element){
+
+document.querySelectorAll(".content-section")
+.forEach(section=>{
+section.style.display="none";
+});
+
+document.getElementById(sectionId)
+.style.display="block";
+
+document.querySelectorAll(".menu-item")
+.forEach(item=>{
+item.classList.remove("active");
+});
+
+element.classList.add("active");
+
+}
+
+</script>
+
+</body>
+</html>

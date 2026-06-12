@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>404 | TrustBank</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    linear-gradient(
+        rgba(11,31,58,0.85),
+        rgba(11,31,58,0.85)
+    ),
+    url("Assest/bank1.webp");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.error-box{
+    width:90%;
+    max-width:700px;
+    background:rgba(255,255,255,.95);
+    padding:50px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+.bank-icon{
+    font-size:60px;
+    color:#0B1F3A;
+    margin-bottom:20px;
+}
+
+.error-code{
+    font-size:100px;
+    font-weight:700;
+    color:#0B1F3A;
+}
+
+.error-title{
+    font-size:32px;
+    margin-top:10px;
+    color:#0B1F3A;
+}
+
+.error-message{
+    margin-top:20px;
+    color:#666;
+    line-height:28px;
+    font-size:17px;
+}
+
+.buttons{
+    margin-top:35px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    text-decoration:none;
+    padding:15px 28px;
+    border-radius:12px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.primary-btn{
+    background:#0B1F3A;
+    color:white;
+}
+
+.primary-btn:hover{
+    background:rgba(209,177,177,0.92);
+    color:black;
+}
+
+.secondary-btn{
+    border:2px solid #0B1F3A;
+    color:#0B1F3A;
+}
+
+.secondary-btn:hover{
+    background:#0B1F3A;
+    color:white;
+}
+
+@media(max-width:768px){
+
+.error-box{
+    padding:35px 20px;
+}
+
+.error-code{
+    font-size:70px;
+}
+
+.error-title{
+    font-size:25px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="error-box">
+
+    <div class="bank-icon">
+        <i class="fa-solid fa-building-columns"></i>
+    </div>
+
+    <h1 class="error-code">404</h1>
+
+    <h2 class="error-title">
+        Banking Service Unavailable
+    </h2>
+
+    <p class="error-message">
+        Sorry! This TrustBank feature is currently under development.
+        Please return to your dashboard and try again later.
+    </p>
+
+    <div class="buttons">
+
+    <a id="backBtn" class="btn primary-btn">
+        Back to Dashboard
+    </a>
+
+</div>
+
+</div>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+const type = params.get("type");
+
+const backBtn = document.getElementById("backBtn");
+
+if(type === "admin"){
+    backBtn.href = "admin-dashboard.html";
+    backBtn.innerHTML =
+    '<i class="fa-solid fa-user-shield"></i> Back to Admin Dashboard';
+}
+else if(type === "user"){
+    backBtn.href = "user-dashboard.html";
+    backBtn.innerHTML =
+    '<i class="fa-solid fa-house"></i> Back to User Dashboard';
+}
+else if(type === "hfb" || type === "hl"||type === "hi"||type === "ht"){
+    backBtn.href = "index.html#footer";
+    backBtn.innerHTML =
+    '<i class="fa-solid fa-house"></i> Back to Home';
+}
+else if(type === "lfb" || type === "ll"||type === "li"||type === "lt"){
+    backBtn.href = "loans.html";
+    backBtn.innerHTML =
+    '<i class="fa-solid fa-house"></i> Back to Previous Page';
+}
+else if(type === "pfb" || type === "pl"||type === "pi"||type === "pt"){
+    backBtn.href = "personal.html";
+    backBtn.innerHTML =
+    '<i class="fa-solid fa-house"></i> Back to Previous Page';
+}
+else if(type === "cfb" || type === "cl"||type === "ci"||type === "ct"){
+    backBtn.href = "creditcards.html";
+    backBtn.innerHTML =
+    '<i class="fa-solid fa-house"></i> Back to Previous Page';
+}
+else if(type === "cafb" || type === "cal"||type === "cai"||type === "cat"){
+    backBtn.href = "contact.html";
+    backBtn.innerHTML =
+    '<i class="fa-solid fa-house"></i> Back to Previous Page';
+}
+else if(type === "afb" || type === "al"||type === "ai"||type === "at"){
+    backBtn.href = "about.html";
+    backBtn.innerHTML =
+    '<i class="fa-solid fa-house"></i> Back to Previous Page';
+}
+else if(type === "logg" || type === "logf"||type === "logi"){
+    backBtn.href = "login.html";
+    backBtn.innerHTML =
+    '<i class="fa-solid fa-house"></i> Back to Login';
+}
+else if(type === "signg" || type === "signf"||type === "signi"){
+    backBtn.href = "signin.html";
+    backBtn.innerHTML =
+    '<i class="fa-solid fa-house"></i> Back to SignIn';
+}
+
+</script>
+
+</body>
+</html>
